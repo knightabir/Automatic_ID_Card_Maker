@@ -1,7 +1,6 @@
 package com.IdCard.entity;
 
 import jakarta.persistence.*;
-
 @Entity
 @Table(name = "school_id")
 public class SchoolId {
@@ -20,7 +19,7 @@ public class SchoolId {
     private String roll;
     private String currentYear;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+    @ManyToOne(cascade = CascadeType.ALL , optional = true)
     @JoinColumn(name = "school_user_id")
     private SchoolUser schoolUser;
 

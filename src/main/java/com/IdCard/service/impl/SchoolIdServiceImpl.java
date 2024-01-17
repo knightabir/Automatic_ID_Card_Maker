@@ -37,6 +37,6 @@ public class SchoolIdServiceImpl implements SchoolIdService {
 
     @Override
     public List<SchoolId> findBySchool(SchoolUser schoolUser) {
-        return null;
+        return this.schoolIdRepository.findAll();
     }
 }

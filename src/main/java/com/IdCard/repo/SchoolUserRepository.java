@@ -1,5 +1,6 @@
 package com.IdCard.repo;
 
+import com.IdCard.entity.SchoolId;
 import com.IdCard.entity.SchoolUser;
 import org.springframework.data.jpa.repository.JpaRepository;
 

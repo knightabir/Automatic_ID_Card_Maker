@@ -1,5 +1,5 @@
 package com.IdCard.service.impl;
-public class UserDetailServiceImpl{
 
+public class UserDetailServiceImpl {
 
 }
