@@ -1,7 +1,13 @@
 package com.IdCard.service;
 
 import com.IdCard.entity.OrgId;
-import org.springframework.data.jpa.repository.JpaRepository;
 
-public interface OrgIdService extends JpaRepository<OrgId,Long> {
+import java.util.List;
+
+public interface OrgIdService{
+    public OrgId addId(OrgId orgId);
+    public OrgId updateId(OrgId orgId);
+    public List<OrgId> getOrgId();
+    public OrgId getOrgIdById(Long orgIdId);
+    public void deleteOrgIdById(Long orgIdID);
 }
