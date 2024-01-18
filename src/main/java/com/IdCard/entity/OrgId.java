@@ -1,8 +1,11 @@
 package com.IdCard.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonIncludeProperties;
 import jakarta.persistence.*;
 
 @Entity
+@Table(name = "org_id")
 public class OrgId {
     @Id
     @GeneratedValue(strategy = GenerationType.AUTO)
@@ -16,11 +19,11 @@ public class OrgId {
     private String dateOfJoin;
     private String blood;
 
-    @ManyToOne(cascade = CascadeType.ALL)
+
+    @ManyToOne(cascade = CascadeType.ALL, optional = true)
     @JoinColumn(name = "org_user_id")
+    @JsonIgnoreProperties("orgId")
     private OrgUser orgUser;
-
-
 
     //constructor
     public OrgId() {

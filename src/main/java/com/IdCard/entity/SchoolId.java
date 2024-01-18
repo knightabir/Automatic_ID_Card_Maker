@@ -1,5 +1,7 @@
 package com.IdCard.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 @Entity
 @Table(name = "school_id")
@@ -19,8 +21,9 @@ public class SchoolId {
     private String roll;
     private String currentYear;
 
-    @ManyToOne(cascade = CascadeType.ALL , optional = true)
+    @ManyToOne(cascade = CascadeType.ALL, optional = true)
     @JoinColumn(name = "school_user_id")
+    @JsonIgnoreProperties("schoolId")
     private SchoolUser schoolUser;
 
 

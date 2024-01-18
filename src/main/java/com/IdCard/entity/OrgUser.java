@@ -1,5 +1,6 @@
 package com.IdCard.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 import javax.naming.Name;
@@ -20,13 +21,12 @@ public class OrgUser {
     private String organization;
     private String officeAddress;
 
-    @OneToMany(cascade = CascadeType.ALL,orphanRemoval = true)
-    @JoinColumn(name = "org_user_id")
+    @OneToMany(mappedBy = "orgUser", cascade = CascadeType.ALL)
+    @JsonIgnoreProperties("orgUser")
     private List<OrgId> orgId;
 
-
-
     //constructor
+
 
     public OrgUser() {
 

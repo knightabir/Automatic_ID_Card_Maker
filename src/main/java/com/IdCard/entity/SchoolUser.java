@@ -1,5 +1,6 @@
 package com.IdCard.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
 import jakarta.persistence.*;
 
 import java.util.List;
@@ -18,10 +19,9 @@ public class SchoolUser {
     private String Role;
     private String school;
 
-    @OneToMany(cascade=CascadeType.ALL,orphanRemoval = true)
-    @JoinColumn(name = "school_user_id")
+    @OneToMany(mappedBy = "schoolUser", cascade = CascadeType.ALL)
+    @JsonIgnoreProperties("schoolUser")
     private List<SchoolId> schoolId;
-
 
     public List<SchoolId> getSchoolId() {
         return schoolId;
