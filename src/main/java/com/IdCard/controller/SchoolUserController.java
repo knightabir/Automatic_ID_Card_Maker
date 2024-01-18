@@ -36,7 +36,7 @@ public class SchoolUserController {
     }
 
     @PutMapping("/{userId}")
-    public SchoolUser updateUser(@PathVariable Long userId, @RequestBody SchoolUser schoolUser) throws Exception{
+    public SchoolUser updateUser(@PathVariable("UserId") Long userId, @RequestBody SchoolUser schoolUser) throws Exception{
         return this.schoolUserService.updateSchoolUserById(userId,schoolUser);
     }
 

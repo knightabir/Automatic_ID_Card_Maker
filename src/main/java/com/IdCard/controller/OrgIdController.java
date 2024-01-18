@@ -1,9 +1,7 @@
 package com.IdCard.controller;
 
 import com.IdCard.entity.OrgId;
-import com.IdCard.entity.SchoolId;
 import com.IdCard.service.OrgIdService;
-import com.oracle.svm.core.annotate.Delete;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.web.bind.annotation.*;
 
@@ -22,13 +20,13 @@ public class OrgIdController {
         return this.orgIdService.addId(orgId);
     }
 
-    @GetMapping("/{userid}")
+    @GetMapping("/{userId}")
     public  OrgId getUserById(@PathVariable("userid") Long userid){
         return this.orgIdService.getOrgIdById(userid);
     }
 
-    @PutMapping("/{userid}")
-    public OrgId updateUserById(@PathVariable("userid") Long userId, @RequestBody OrgId orgId) throws Exception{
+    @PutMapping("/{userId}")
+    public OrgId updateUserById(@PathVariable("userId") Long userId, @RequestBody OrgId orgId) throws Exception{
         return this.orgIdService.updateId(orgId,userId);
     }
 
@@ -37,7 +35,7 @@ public class OrgIdController {
         return this.orgIdService.getOrgId();
     }
 
-    @DeleteMapping("/{userid}")
+    @DeleteMapping("/{userId}")
     public void deleteById(@PathVariable Long userId){
         this.orgIdService.deleteOrgIdById(userId);
     }

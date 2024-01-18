@@ -25,8 +25,8 @@ public class SchoolIdController {
         return this.schoolIdService.getSchoolIdById(userId);
     }
 
-    @PutMapping("/{userid}")
-    public SchoolId updateSchoolId(@PathVariable("userid") Long userId,@RequestBody SchoolId schoolId) throws Exception {
+    @PutMapping("/{userId}")
+    public SchoolId updateSchoolId(@PathVariable("userId") Long userId,@RequestBody SchoolId schoolId) throws Exception {
         return this.schoolIdService.updateSchoolId(userId,schoolId);
     }
 
@@ -35,7 +35,7 @@ public class SchoolIdController {
         return this.schoolIdService.GetAllSchoolId();
     }
 
-    @DeleteMapping("/{userid}")
+    @DeleteMapping("/{userId}")
     public void deleteUserId(@PathVariable Long userId){
         this.schoolIdService.deleteSchoolId(userId);
     }
