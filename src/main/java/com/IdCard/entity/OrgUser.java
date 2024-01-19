@@ -1,6 +1,8 @@
 package com.IdCard.entity;
 
+import com.fasterxml.jackson.annotation.JsonIgnore;
 import com.fasterxml.jackson.annotation.JsonIgnoreProperties;
+import com.fasterxml.jackson.annotation.JsonInclude;
 import jakarta.persistence.*;
 
 import javax.naming.Name;
@@ -21,15 +23,11 @@ public class OrgUser {
     private String organization;
     private String officeAddress;
 
-    @OneToMany(mappedBy = "orgUser", cascade = CascadeType.ALL,orphanRemoval = true)
-    @JsonIgnoreProperties("orgUser")
+    @OneToMany(mappedBy = "orgUser", cascade = CascadeType.ALL,fetch = FetchType.EAGER)
+    @JsonIgnore
     private List<OrgId> orgId;
 
     //constructor
-
-
-
-
     public OrgUser() {
 
     }

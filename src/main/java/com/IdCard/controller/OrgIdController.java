@@ -21,7 +21,7 @@ public class OrgIdController {
     }
 
     @GetMapping("/{userId}")
-    public  OrgId getUserById(@PathVariable("userid") Long userid){
+    public  OrgId getUserById(@PathVariable("userId") Long userid){
         return this.orgIdService.getOrgIdById(userid);
     }
 

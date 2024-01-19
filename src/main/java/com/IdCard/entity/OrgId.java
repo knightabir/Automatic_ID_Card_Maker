@@ -20,10 +20,11 @@ public class OrgId {
     private String blood;
 
 
-    @ManyToOne(cascade = CascadeType.ALL)
-    @JoinColumn(name = "org_user_id",nullable = false)
-    @JsonIgnoreProperties("orgId")
+    @ManyToOne(fetch = FetchType.EAGER)
+    @JoinColumn(name = "org_user_id")
     private OrgUser orgUser;
+
+
 
     //constructor
     public OrgId() {
