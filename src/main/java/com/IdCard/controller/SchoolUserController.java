@@ -25,18 +25,23 @@ public class SchoolUserController {
         return this.schoolUserService.createSchoolUser(schoolUser);
     }
 
-    @GetMapping("/id/{username}")
+    @GetMapping("/id/{userId}")
     public SchoolUser getUserByUsername(@PathVariable("userId") Long userId){
         return this.schoolUserService.getSchoolUserById(userId);
     }
 
     @GetMapping("/{userId}")
+    public SchoolUser getUserById(@PathVariable("userId") Long userId){
+        return schoolUserService.getSchoolUserById(userId);
+    }
+
+    @DeleteMapping("/{userId}")
     public void deleteById(@PathVariable("userId") Long userId){
         this.schoolUserService.deleteSchoolUserById(userId);
     }
 
     @PutMapping("/{userId}")
-    public SchoolUser updateUser(@PathVariable("UserId") Long userId, @RequestBody SchoolUser schoolUser) throws Exception{
+    public SchoolUser updateUser(@PathVariable("userId") Long userId, @RequestBody SchoolUser schoolUser) throws Exception{
         return this.schoolUserService.updateSchoolUserById(userId,schoolUser);
     }
 
@@ -44,5 +49,7 @@ public class SchoolUserController {
     public List<SchoolUser> getAllUser(){
         return this.schoolUserService.GetAllSchoolUser();
     }
+
+
 
 }

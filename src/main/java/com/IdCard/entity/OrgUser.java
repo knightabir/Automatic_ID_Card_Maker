@@ -21,11 +21,13 @@ public class OrgUser {
     private String organization;
     private String officeAddress;
 
-    @OneToMany(mappedBy = "orgUser", cascade = CascadeType.ALL)
+    @OneToMany(mappedBy = "orgUser", cascade = CascadeType.ALL,orphanRemoval = true)
     @JsonIgnoreProperties("orgUser")
     private List<OrgId> orgId;
 
     //constructor
+
+
 
 
     public OrgUser() {

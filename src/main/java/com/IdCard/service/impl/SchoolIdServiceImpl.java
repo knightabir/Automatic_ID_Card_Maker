@@ -63,4 +63,9 @@ public class SchoolIdServiceImpl implements SchoolIdService {
         return this.schoolIdRepository.findAll();
     }
 
+    @Override
+    public List<SchoolId> getListOfId(Long id) {
+        return schoolIdRepository.findBySchoolUserId(id);
+    }
+
 }

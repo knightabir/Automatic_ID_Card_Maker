@@ -13,4 +13,5 @@ public interface OrgIdService{
     public List<OrgId> getOrgId();
     public OrgId getOrgIdById(Long orgIdId);
     public void deleteOrgIdById(Long orgIdID);
+    List<OrgId> getListOfId(Long orgId);
 }

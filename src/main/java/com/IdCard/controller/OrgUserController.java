@@ -3,6 +3,7 @@ package com.IdCard.controller;
 import com.IdCard.entity.OrgUser;
 import com.IdCard.service.OrgUserService;
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.http.ResponseEntity;
 import org.springframework.web.bind.annotation.*;
 
 import java.util.List;
@@ -26,12 +27,12 @@ public class OrgUserController {
     }
 
     @GetMapping("/{userId}")
-    public OrgUser getUserById(@PathVariable("userid") Long userId){
+    public OrgUser getUserById(@PathVariable Long userId){
         return this.orgUserService.getUser(userId);
     }
 
     @PutMapping("/{userId}")
-    public OrgUser updateUser(@PathVariable("userId") Long userId, @RequestBody OrgUser orgUser) throws Exception{
+    public OrgUser updateUser(@PathVariable Long userId, @RequestBody OrgUser orgUser) throws Exception{
         return this.orgUserService.updateUser(userId,orgUser);
     }
 
@@ -41,7 +42,9 @@ public class OrgUserController {
     }
 
     @DeleteMapping("/{userId}")
-    public void deleteById(@PathVariable("userId") Long userId){
+    public ResponseEntity<Void> deleteById(@PathVariable Long userId) {
         this.orgUserService.deleteUser(userId);
+        return ResponseEntity.noContent().build();
     }
+
 }

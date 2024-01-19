@@ -62,4 +62,9 @@ public class OrgIdServiceImpl implements OrgIdService {
     public void deleteOrgIdById(Long orgIdID) {
         this.orgIdRepository.deleteById(orgIdID);
     }
+
+    @Override
+    public List<OrgId> getListOfId(Long orgId) {
+        return orgIdRepository.findByOrgUserId(orgId);
+    }
 }

@@ -40,4 +40,9 @@ public class SchoolIdController {
         this.schoolIdService.deleteSchoolId(userId);
     }
 
+    @GetMapping("/id/{schoolId}")
+    public List<SchoolId> getIdOfSchool(@PathVariable Long schoolId){
+        return schoolIdService.getListOfId(schoolId);
+    }
+
 }

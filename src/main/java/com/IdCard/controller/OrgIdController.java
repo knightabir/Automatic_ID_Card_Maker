@@ -40,4 +40,9 @@ public class OrgIdController {
         this.orgIdService.deleteOrgIdById(userId);
     }
 
+    @GetMapping("/orgid/{orgId}")
+    public List<OrgId> getIdOfOrg (@PathVariable Long orgId){
+        return orgIdService.getListOfId(orgId);
+    }
+
 }

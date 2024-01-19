@@ -13,4 +13,5 @@ public interface SchoolIdService{
     public SchoolId getSchoolIdById(Long schoolIdId);
     public void deleteSchoolId(Long SchoolIdId);
     public List<SchoolId> GetAllSchoolId();
+    List<SchoolId> getListOfId(Long id);
 }

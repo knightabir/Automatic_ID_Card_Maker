@@ -20,8 +20,8 @@ public class OrgId {
     private String blood;
 
 
-    @ManyToOne(cascade = CascadeType.ALL, optional = true)
-    @JoinColumn(name = "org_user_id")
+    @ManyToOne(cascade = CascadeType.ALL)
+    @JoinColumn(name = "org_user_id",nullable = false)
     @JsonIgnoreProperties("orgId")
     private OrgUser orgUser;
 
